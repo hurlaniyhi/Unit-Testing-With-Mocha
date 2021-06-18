@@ -5,19 +5,14 @@ language: node_js
 node_js:
   - node
 
-jobs:
-  include:
-    - stage: test
+script:
+  - npm run test
 
-      script:
-        - npm run test
-      
-    - stage: deploy
-
-      deploy:
-        provider: heroku
-        api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
-        app: app-testify-me
-
-      notifications:
-        email: true
+after_success:
+deploy:
+  provider: heroku
+  api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
+  app: app-testify-me
+  
+notifications:
+  email: true
