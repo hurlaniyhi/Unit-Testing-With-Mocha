@@ -8,11 +8,10 @@ node_js:
 script:
   - npm run test
 
-after_success:
-  deploy:
-    provider: heroku
-    api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
-    app: app-testify-me
+deploy:
+  provider: heroku
+  api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
+  app: app-testify-me
 
 notifications:
   email: true
