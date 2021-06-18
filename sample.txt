@@ -1,3 +1,6 @@
+STAGING YOUR TRAVIS USING A JOBS
+----------------------------------------------------------------
+
 sudo: false
 
 language: node_js
@@ -21,3 +24,11 @@ jobs:
 
       notifications:
         email: true
+
+
+TRAVIS CI SETUP
+----------------------------------------------------------------
+
+- goto travis-ci.com and signup with your Github
+- upon signup, give travis access to your repositories
+- click on any repository and you will see the builds upon a successful github push to that repository
