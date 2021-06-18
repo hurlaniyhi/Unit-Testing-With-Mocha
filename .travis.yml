@@ -8,5 +8,8 @@ node_js:
 script:
   - npm run test
 
+after_success:
+  git push heroku master
+
 notifications:
   email: true
