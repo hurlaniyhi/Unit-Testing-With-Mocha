@@ -1,17 +1,23 @@
-sudo: false
+jobs:
+  include:
+    - stage: test
 
-language: node_js
+      sudo: false
 
-node_js:
-  - node
+      language: node_js
 
-script:
-  - npm run test
+      node_js:
+        - node
 
-deploy:
-  provider: heroku
-  api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
-  app: app-testify-me
+      script:
+        - npm run test
+      
+    - stage: deploy
 
-notifications:
-  email: true
+      deploy:
+        provider: heroku
+        api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
+        app: app-testify-me
+
+      notifications:
+        email: true
