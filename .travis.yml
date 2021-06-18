@@ -5,13 +5,17 @@ language: node_js
 node_js:
   - node
 
-script:
-  - npm run test
-
-deploy:
-  provider: heroku
-  api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
-  app: app-testify-me
+jobs: 
+  include: 
+    -stage: test
+      script:
+        - npm run test
+    -stage: deploy
+      -# this stage will only run if the first stage build is successful (i.e test passed)
+      deploy:
+        provider: heroku
+        api_key: "ae7edd5a-7e12-4b83-9f38-5b931e89676a"
+        app: app-testify-me
 
 notifications:
   email: true

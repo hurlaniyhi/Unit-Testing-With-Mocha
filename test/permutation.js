@@ -5,7 +5,7 @@ let input = 'xyz'
 
 describe("Permutation tests", function () {
     it("should return a string", () => {
-        assert.typeOf(app.permutation(input), "string")
+        assert.typeOf(app.permutation(input), "number")
     })
 
     it("Number of possible combination should be factorial of input", () => {
