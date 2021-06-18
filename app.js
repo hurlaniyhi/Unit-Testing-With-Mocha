@@ -4,7 +4,7 @@ const app = express()
 var port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
-    res.send("Implementation of travis CI and CD")
+    res.send("Implementation of CI and CD with travis CI")
 }) 
 
 
