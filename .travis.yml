@@ -15,4 +15,4 @@ deploy:
   app: app-testify-me
 
 notifications:
-  email: true
+  email: false
