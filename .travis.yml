@@ -7,10 +7,10 @@ node_js:
 
 jobs: 
   include: 
-    -stage: test
+    - stage: test
       script:
         - npm run test
-    -stage: deploy
+    - stage: deploy
       -# this stage will only run if the first stage build is successful (i.e test passed)
       deploy:
         provider: heroku
